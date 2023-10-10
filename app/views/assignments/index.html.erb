@@ -1,0 +1,54 @@
+<%if user_signed_in?%>
+
+<h1>Assignment's List</h1>
+
+<table class = "table table-bordered table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th>Assignment name</th>
+      <th>Description</th>
+      <th>Deadline</th>
+      <th>Completion status</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @assignments.each do |assignment| %>
+      <%if assignment.user == current_user%>
+      <tr>
+        <td>
+          <%= link_to assignment.assignment_name , assignment %>
+          
+          </td>
+        <td><%= assignment.description %></td>
+        <td><%= assignment.deadline %></td>
+        <td><%= assignment.completion_status %></td>
+      
+        <td><%= link_to 'Delete', assignment, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm"%></td>
+      </tr>
+      <%end%>
+     
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Assignment', new_assignment_path, class:"btn btn-light"%>
+
+<%else%>
+<div id="content-container">
+    <h1>Welcome to My Website</h1>
+    <p>This is some content on your page.</p>
+  </div>
+
+<video autoplay muted loop id="video-bg">
+  <source src="/videos/abstractBlue.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+
+<%end%>
+
+

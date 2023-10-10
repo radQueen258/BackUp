@@ -1,0 +1,16 @@
+<h1> Add New Assignment</h1>
+<br>
+
+<%= render 'form', assignment: @assignment %>
+<%= form_for @task do |form| %>
+  <!-- Other task fields -->
+  <div class="field">
+    <%= form.label :project_id %>
+    <%= form.collection_select(:project_id, Project.all, :id, :name, prompt: "Select a project") %>
+  </div>
+  <!-- Submit button and form closing tags -->
+<% end %>
+
+
+<br>
+<%= link_to 'Back', assignments_path, class: "btn btn-outline-dark"%>

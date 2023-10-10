@@ -1,0 +1,30 @@
+#video-bg {
+  position: fixed; /* Fixed position to cover the entire viewport */
+  top: 0;
+  left: 0;
+  min-width: 100%; /* Minimum width to cover the entire viewport */
+  min-height: 100%; /* Minimum height to cover the entire viewport */
+  z-index: -1; /* Ensure the video is behind other elements */
+}
+
+ #content-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(255, 255, 255, 0.5); /* Transparent white background */
+      padding: 20px;
+      border-radius: 10px; /* Rounded corners for the border */
+      z-index: 1;
+    }
+
+
+  .navbar {
+    background-color: rgba(0, 0, 0, 0.5); /* Black with 70% opacity (adjust as needed) */
+ 
+  }
+
+  .navItem{
+    color: white;
+  }
+  
